@@ -1,37 +1,37 @@
 # Copy this file to keyvault-values.yaml. That file is gitignored.
 azure:
-  subscriptionId: "REPLACE_ME_AZURE_SUBSCRIPTION_ID"
-  keyVaultName: "REPLACE_ME_KEY_VAULT_NAME"
+  subscriptionId: "754a76d8-4c3e-48dd-bb6e-72e50230f808"
+  keyVaultName: "yashkv2"
 
 # Values in this section are sensitive application credentials.
 secrets:
-  postgres-runtime-url: "REPLACE_ME_POSTGRES_RUNTIME_URL"
-  internal-api-token: "REPLACE_ME_INTERNAL_API_TOKEN"
-  identity-microsoft-client-secret: "REPLACE_ME_MICROSOFT_CLIENT_SECRET"
+  postgres-runtime-url: "postgresql+asyncpg://yaswanth:Chintu1602@kvpostgredemo.postgres.database.azure.com:5432/sentinel?ssl=require"
+  internal-api-token: "F8bEIYHBXQGIvMqW8IqdoxTXsUCxI4ZG0HwvFv3jZOYGMPeM66juwj63ms1Lci4w"
+  identity-microsoft-client-secret: "gmd8Q~sOF8spCVhSsKi4u0LYeb3TZ5~LTMT3ecLa"
   # Random secret used to sign session cookies/tokens. Generate independently:
   # openssl rand -hex 32
-  identity-session-signing-key: "REPLACE_ME_SESSION_SIGNING_KEY"
+  identity-session-signing-key: "qY6tQJvCxRDMTAco/so+aQgGZLfdZZrjP+sR5b2MRO4CxmXUDY+oTd1hhJwdkx8g"
   # Random 32-byte URL-safe base64 encryption key. Generate independently:
   # openssl rand -base64 32 | tr '+/' '-_'
-  identity-token-encryption-key: "REPLACE_ME_TOKEN_ENCRYPTION_KEY"
+  identity-token-encryption-key: "kqO50RO8It0sU0svryH60bOu-dLEimx9QFm4YLmuLS4="
 
 # Key Vault names use hyphens. The SecretProviderClass maps them to the
 # uppercase environment-variable keys expected by the applications.
 config:
   config-sentinel-environment: "aks"
   config-sentinel-log-level: "INFO"
-  config-sentinel-entra-audience: "REPLACE_ME_IDENTITY_APP_CLIENT_ID"
+  config-sentinel-entra-audience: "1bd57d60-61e8-463e-9b94-c6f6fb038085"
   config-sentinel-entra-authority-host: "https://login.microsoftonline.com"
-  config-sentinel-microsoft-client-id: "REPLACE_ME_IDENTITY_APP_CLIENT_ID"
-  config-sentinel-microsoft-redirect-uri: "https://sentinel.vaultrix.in/auth/callback"
-  config-sentinel-frontend-url: "https://sentinel.vaultrix.in"
+  config-sentinel-microsoft-client-id: "1bd57d60-61e8-463e-9b94-c6f6fb038085"
+  config-sentinel-microsoft-redirect-uri: "https://sentinel.sneakerhead.rest/auth/callback"
+  config-sentinel-frontend-url: "https://sentinel.sneakerhead.rest"
   config-sentinel-session-cookie-name: "sentinel_session"
   config-sentinel-session-cookie-secure: "true"
   config-sentinel-session-ttl-seconds: "28800"
   config-sentinel-allowed-tenants: "[]"
-  config-sentinel-cors-origins: '["https://sentinel.vaultrix.in"]'
+  config-sentinel-cors-origins: '["https://sentinel.sneakerhead.rest"]'
   config-sentinel-identity-service-url: "http://identity-service.sentinel-app.svc.cluster.local"
   config-sentinel-audit-service-url: "http://audit-service.sentinel-app.svc.cluster.local"
   config-sentinel-relationship-service-url: "http://relationship-service.sentinel-app.svc.cluster.local"
   config-sentinel-login-blob-container-name: "sentinel-login-events"
-  config-azure-tenant-id: "REPLACE_ME_PROVIDER_ENTRA_TENANT_ID"
+  config-azure-tenant-id: "cb69c701-1ad6-4282-bcda-0982701e13a6"
